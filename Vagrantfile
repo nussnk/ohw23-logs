@@ -8,13 +8,13 @@ Vagrant.configure("2") do |config|
   end
   
   boxes = [
-    { :name => "web",
-      :ip => "192.168.50.10",
-      :prov_file => "prov-web.sh",
-    },
     { :name => "log",
       :ip => "192.168.50.15",
       :prov_file => "prov-log",
+    },
+    { :name => "web",
+      :ip => "192.168.50.10",
+      :prov_file => "prov-web.sh",
     }
   ]
  
