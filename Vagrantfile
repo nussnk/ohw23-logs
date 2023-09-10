@@ -10,9 +10,11 @@ Vagrant.configure("2") do |config|
   boxes = [
     { :name => "web",
       :ip => "192.168.50.10",
+      :prov_file => "prov-web.sh",
     },
     { :name => "log",
       :ip => "192.168.50.15",
+      :prov_file => "prov-log",
     }
   ]
  
@@ -20,6 +22,7 @@ Vagrant.configure("2") do |config|
     config.vm.define opts[:name] do |config|
       config.vm.hostname = opts[:name]
       config.vm.network "private_network", ip: opts[:ip]
+      config.vm.provision "shell", path: opts[:prov_file]
     end
   end
 end
