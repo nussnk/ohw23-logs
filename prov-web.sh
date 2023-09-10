@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 systemctl restart chronyd
 
-yum install epel-realease
+yum install epel-release -y
 yum install vim nginx audispd-plugins -y
 
 cp /vagrant/web/nginx.conf /etc/nginx/nginx.conf
